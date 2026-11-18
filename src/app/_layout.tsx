@@ -4,7 +4,7 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import * as SystemUI from 'expo-system-ui';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { I18nProvider } from '@/i18n';
@@ -17,9 +17,23 @@ SystemUI.setBackgroundColorAsync(colors.bg).catch(() => undefined);
 
 function Navigator() {
   const { state } = useStore();
-  const [spaceReady] = useSpaceGrotesk({ SpaceGrotesk_500Medium, SpaceGrotesk_700Bold });
-  const [interReady] = useInter({ Inter_400Regular, Inter_500Medium, Inter_600SemiBold });
-  const ready = spaceReady && interReady && state.hydrated;
+  const [spaceReady, spaceError] = useSpaceGrotesk({ SpaceGrotesk_500Medium, SpaceGrotesk_700Bold });
+  const [interReady, interError] = useInter({ Inter_400Regular, Inter_500Medium, Inter_600SemiBold });
+  // A font that fails to load must never block the app: fall back to system fonts.
+  const fontsSettled = (spaceReady || !!spaceError) && (interReady || !!interError);
+
+  // Safety net: never sit on the splash/blank screen for more than a few seconds.
+  const [timedOut, setTimedOut] = useState(false);
+  useEffect(() => {
+    const id = setTimeout(() => setTimedOut(true), 4000);
+    return () => clearTimeout(id);
+  }, []);
+
+  const ready = state.hydrated && (fontsSettled || timedOut);
+
+  useEffect(() => {
+    if (spaceError || interError) console.warn('[xoog] Font loading failed, using system fonts', spaceError ?? interError);
+  }, [spaceError, interError]);
 
   useEffect(() => {
     configureNotifications();
