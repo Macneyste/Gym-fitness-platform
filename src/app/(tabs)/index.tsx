@@ -1,6 +1,5 @@
 import { router } from 'expo-router';
 import { Bell, CalendarCheck, Clock, Flame, Zap } from 'lucide-react-native';
-import { useMemo } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { TodayCard } from '@/components/home/TodayCard';
@@ -10,9 +9,18 @@ import { addDays, weekIndex } from '@/lib/date';
 import { workoutForDate } from '@/lib/plan';
 import { useStats, useStore } from '@/store';
 import { colors, fonts, radius, sizes, space, type } from '@/theme';
-import type { Category } from '@/types/models';
+import type { Category, Plan } from '@/types/models';
 
 const CATEGORIES: Category[] = ['strength', 'cardio', 'hiit', 'mobility', 'yoga'];
+
+/** Today's workout, or on rest days the next scheduled one (offset = days ahead). */
+function nextWorkout(plan: Plan | undefined, today: Date) {
+  for (let offset = 0; offset <= 7; offset++) {
+    const workout = workoutForDate(plan, addDays(today, offset));
+    if (workout) return { workout, offset };
+  }
+  return undefined;
+}
 
 function greetingKey(hour: number) {
   if (hour < 12) return 'home.greeting';
@@ -24,18 +32,8 @@ export default function Home() {
   const { t, tl } = useI18n();
   const { state } = useStore();
   const stats = useStats();
-  const today = useMemo(() => new Date(), []);
-
-  const todays = workoutForDate(state.plan, today);
-  // On rest days surface the next scheduled workout instead.
-  const next = useMemo(() => {
-    if (todays) return { workout: todays, offset: 0 };
-    for (let i = 1; i <= 7; i++) {
-      const w = workoutForDate(state.plan, addDays(today, i));
-      if (w) return { workout: w, offset: i };
-    }
-    return undefined;
-  }, [state.plan, todays, today]);
+  const today = new Date();
+  const next = nextWorkout(state.plan, today);
 
   const name = state.profile.name || state.user?.name || '';
   const initials = name.trim().split(/\s+/).map((p) => p[0]).join('').slice(0, 2).toUpperCase() || 'X';

@@ -39,7 +39,9 @@ export function StoreProvider({ children, initial }: { children: ReactNode; init
 
   // Push pending sessions when they change and whenever the app returns to the foreground.
   const latest = useRef(state);
-  latest.current = state;
+  useEffect(() => {
+    latest.current = state;
+  });
   useEffect(() => {
     const sync = () => {
       const s = latest.current;
@@ -64,9 +66,11 @@ export function useStore() {
 }
 
 /** Derived numbers for Home & Progress. */
-export function useStats(today = new Date()) {
+export function useStats() {
   const { state } = useStore();
+  const todayKey = dayKey(new Date());
   return useMemo(() => {
+    const today = new Date(`${todayKey}T12:00:00`);
     const doneDays = new Set(state.sessions.map((s) => dayKey(new Date(s.startedAt))));
     const todays = state.sessions.filter((s) => isSameDay(new Date(s.startedAt), today));
     const weekStart = startOfWeek(today).getTime();
@@ -79,6 +83,5 @@ export function useStats(today = new Date()) {
       weekWorkouts: thisWeek.length,
       totalWorkouts: state.sessions.length,
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.sessions, dayKey(today)]);
+  }, [state.sessions, todayKey]);
 }

@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { ChevronRight, Search, X } from 'lucide-react-native';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { FlatList, I18nManager, Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -15,17 +15,24 @@ import type { Category } from '@/types/models';
 
 const FILTERS: (Category | 'all')[] = ['all', 'strength', 'cardio', 'hiit', 'mobility', 'yoga'];
 
+function asFilter(value?: string): Category | 'all' | undefined {
+  return FILTERS.find((f) => f === value);
+}
+
 export default function Library() {
   const { t, lang } = useI18n();
   const params = useLocalSearchParams<{ category?: string }>();
   const [query, setQuery] = useState('');
-  const [category, setCategory] = useState<Category | 'all'>('all');
+  const [category, setCategory] = useState<Category | 'all'>(() => asFilter(params.category) ?? 'all');
+  const [seenParam, setSeenParam] = useState(params.category);
   const { data, loading, error, retry } = useExercises();
 
-  // Category chips on Home deep-link here.
-  useEffect(() => {
-    if (params.category && FILTERS.includes(params.category as Category)) setCategory(params.category as Category);
-  }, [params.category]);
+  // Category chips on Home deep-link here: adopt a new param during render.
+  if (params.category !== seenParam) {
+    setSeenParam(params.category);
+    const next = asFilter(params.category);
+    if (next) setCategory(next);
+  }
 
   const list = useMemo(() => filterExercises(data, query, category), [data, query, category]);
 

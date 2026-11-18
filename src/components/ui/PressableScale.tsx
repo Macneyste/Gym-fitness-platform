@@ -21,11 +21,11 @@ export function PressableScale({ style, scaleTo = motion.pressScale, onPressIn, 
       disabled={disabled}
       accessibilityState={{ disabled: !!disabled, ...rest.accessibilityState }}
       onPressIn={(e) => {
-        scale.value = withTiming(scaleTo, { duration: motion.fast });
+        scale.set(withTiming(scaleTo, { duration: motion.fast }));
         onPressIn?.(e);
       }}
       onPressOut={(e) => {
-        scale.value = withTiming(1, { duration: motion.fast });
+        scale.set(withTiming(1, { duration: motion.fast }));
         onPressOut?.(e);
       }}
       style={[style, animated]}

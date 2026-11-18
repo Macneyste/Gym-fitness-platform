@@ -39,30 +39,41 @@ function fromRow(r: Row): Exercise {
  * Exercise catalogue: remote (Supabase) when configured, otherwise the
  * bundled seed. Exposes loading / error / retry for list states.
  */
+async function fetchExercises(): Promise<{ data: Exercise[]; error: string | null }> {
+  if (!supabase) return { data: seed, error: null };
+  const { data: rows, error } = await supabase.from('exercises').select('*');
+  // On failure keep the app usable offline with the bundled seed.
+  if (error) return { data: seed, error: error.message };
+  return { data: rows && rows.length ? (rows as Row[]).map(fromRow) : seed, error: null };
+}
+
 export function useExercises() {
   const [data, setData] = useState<Exercise[]>(supabase ? [] : seed);
   const [loading, setLoading] = useState(!!supabase);
   const [error, setError] = useState<string | null>(null);
-
-  const load = useCallback(async () => {
-    if (!supabase) return;
-    setLoading(true);
-    setError(null);
-    const { data: rows, error: err } = await supabase.from('exercises').select('*');
-    if (err) {
-      setError(err.message);
-      setData(seed); // keep the app usable offline
-    } else {
-      setData(rows && rows.length ? (rows as Row[]).map(fromRow) : seed);
-    }
-    setLoading(false);
-  }, []);
+  const [attempt, setAttempt] = useState(0);
 
   useEffect(() => {
-    load();
-  }, [load]);
+    if (!supabase) return;
+    let alive = true;
+    fetchExercises().then((res) => {
+      if (!alive) return;
+      setData(res.data);
+      setError(res.error);
+      setLoading(false);
+    });
+    return () => {
+      alive = false;
+    };
+  }, [attempt]);
 
-  return { data, loading, error, retry: load };
+  const retry = useCallback(() => {
+    setLoading(true);
+    setError(null);
+    setAttempt((n) => n + 1);
+  }, []);
+
+  return { data, loading, error, retry };
 }
 
 export function filterExercises(list: Exercise[], query: string, category: Category | 'all') {
