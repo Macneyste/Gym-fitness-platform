@@ -3,8 +3,8 @@ import { createContext, useContext, useEffect, useMemo, useReducer, useRef, type
 import { AppState as RNAppState } from 'react-native';
 
 import { computeStreak, dayKey, isSameDay, startOfWeek } from '@/lib/date';
+import { pushPendingSessions } from '@/services/sync';
 import { initialState, persistable, reducer, type Action, type AppState } from './reducer';
-import { pushPendingSessions } from './sync';
 
 export * from './reducer';
 

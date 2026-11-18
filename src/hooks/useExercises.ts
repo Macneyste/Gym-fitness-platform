@@ -1,8 +1,8 @@
 import { useCallback, useEffect, useState } from 'react';
 
-import { supabase } from '@/lib/supabase';
+import { supabase } from '@/services/supabase';
 import type { Category, Exercise, Muscle } from '@/types/models';
-import { exercises as seed } from './exercises';
+import { exercises as seed } from '@/data/exercises';
 
 type Row = {
   id: string;

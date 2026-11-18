@@ -3,11 +3,10 @@ import { Bell, Globe, LogOut, Moon, Ruler, Target } from 'lucide-react-native';
 import { StyleSheet, Text, View } from 'react-native';
 
 import { BackgroundRings } from '@/components/brand';
-import { Button, Card, Screen, Segmented } from '@/components/ui';
-import { SettingRow } from '@/components/ui/SettingRow';
+import { Button, Card, Screen, Segmented, SettingRow } from '@/components/ui';
 import { useI18n, type Language } from '@/i18n';
-import { signOut } from '@/lib/auth';
-import { cancelReminders } from '@/lib/reminders';
+import { signOut } from '@/services/auth';
+import { cancelReminders } from '@/services/reminders';
 import { displayWeight } from '@/lib/units';
 import { useStats, useStore } from '@/store';
 import { colors, fonts, radius, sizes, space, type } from '@/theme';

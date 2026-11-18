@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { I18nProvider } from '@/i18n';
-import { configureNotifications } from '@/lib/reminders';
+import { configureNotifications } from '@/services/reminders';
 import { StoreProvider, useStore } from '@/store';
 import { colors } from '@/theme';
 

@@ -33,19 +33,33 @@ Built with Expo SDK 58, Expo Router, TypeScript, Reanimated 4 and Supabase.
 
 ```
 src/
-  app/            Expo Router routes (screens and layouts only)
+  app/              Expo Router routes only (screens + layouts)
+    (tabs)/         Home, Workouts (library), Progress, Account
+    auth/           login, signup
+    onboarding/     gender, age, body, goal, level
+    exercise/ live/ workout/   dynamic [id] screens
   components/
-    brand/        Logo, AppMark, Barbell, BackgroundRings
-    ui/           Button, Card, Chip, StatTile, WeekStrip, ExerciseRow,
-                  RingTimer, BottomNav, TextField, pickers, states…
-  data/           Exercise catalogue (seed + Supabase hook)
-  i18n/           so.json, en.json, provider
-  lib/            plan generator, live-session state machine, dates,
-                  units, auth, Supabase client, reminders
-  store/          Offline-first app store, PR logic, sync
-  theme/          Design tokens
+    ui/             Design-system primitives: Button, Card, Chip, StatTile,
+                    WeekStrip, ExerciseRow, RingTimer, BottomNav, TextField,
+                    pickers, SettingRow, loading/empty/error states
+    brand/          Logo, AppMark, Barbell, BackgroundRings
+    auth/ home/ library/ live/ onboarding/ progress/   feature components
+  data/             Static exercise catalogue (bilingual seed)
+  hooks/            React hooks (useExercises)
+  i18n/             so.json, en.json, provider
+  lib/              Pure logic & helpers: plan generator, live-session
+                    state machine, progress charts, dates, units, format, haptics
+  services/         Side effects / external systems: Supabase client, auth,
+                    notifications (reminders), offline session sync
+  store/            App state: provider, reducer, PR records
+  theme/            Design tokens
+  types/            Domain models
 supabase/migrations/   Database schema with row-level security
-__tests__/             Unit, component and end-to-end navigation tests
+__tests__/
+  unit/             Pure logic (plan, live session, store, dates, i18n…)
+  components/       UI component tests
+  e2e/              App boot + full navigation flows (expo-router)
+jest/               Jest setup files
 ```
 
 ## Getting started
@@ -68,6 +82,6 @@ Push notifications and Apple sign-in need a development build: `npx expo run:ios
 ```bash
 npm run typecheck   # tsc --noEmit
 npm run lint        # expo lint
-npm test            # jest: 55 tests
+npm test            # jest: 56 tests (+ npm run test:android)
 npx expo-doctor     # 20/20
 ```

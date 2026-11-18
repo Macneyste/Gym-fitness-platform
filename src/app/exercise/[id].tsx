@@ -7,7 +7,7 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { ExerciseThumb } from '@/components/library/ExerciseThumb';
 import { EmptyState, IconButton, PressableScale, SkeletonList } from '@/components/ui';
 import { muscleNames } from '@/data/exercises';
-import { useExercises } from '@/data/useExercises';
+import { useExercises } from '@/hooks/useExercises';
 import { useI18n } from '@/i18n';
 import { colors, fonts, radius, space, type } from '@/theme';
 import type { Muscle } from '@/types/models';

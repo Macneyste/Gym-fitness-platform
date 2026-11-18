@@ -3,10 +3,9 @@ import { ArrowLeft, Bell, BellRing, Clock, Minus, Plus } from 'lucide-react-nati
 import { useEffect, useState } from 'react';
 import { I18nManager, StyleSheet, Text, View } from 'react-native';
 
-import { EmptyState, IconButton, Screen } from '@/components/ui';
-import { SettingRow } from '@/components/ui/SettingRow';
+import { EmptyState, IconButton, Screen, SettingRow } from '@/components/ui';
 import { useI18n } from '@/i18n';
-import { cancelReminders, scheduleDailyReminder } from '@/lib/reminders';
+import { cancelReminders, scheduleDailyReminder } from '@/services/reminders';
 import { useStore } from '@/store';
 import { colors, fonts, radius, space, type } from '@/theme';
 

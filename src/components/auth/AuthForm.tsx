@@ -15,7 +15,7 @@ import {
   signUpWithEmail,
   validateCredentials,
   type AuthResult,
-} from '@/lib/auth';
+} from '@/services/auth';
 import { selection } from '@/lib/haptics';
 import { useStore } from '@/store';
 import { colors, fonts, space, type } from '@/theme';

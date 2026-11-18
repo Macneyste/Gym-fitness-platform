@@ -31,9 +31,7 @@
     "plugins": [
       "expo-router",
       "expo-font",
-      "expo-localization",
       "expo-apple-authentication",
-      "expo-secure-store",
       [
         "expo-notifications",
         {
@@ -49,7 +47,6 @@
         }
       ],
       "expo-sqlite",
-      "expo-asset",
       "expo-web-browser"
     ],
     "experiments": {

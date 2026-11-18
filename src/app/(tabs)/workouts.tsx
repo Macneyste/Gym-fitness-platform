@@ -6,7 +6,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ExerciseThumb } from '@/components/library/ExerciseThumb';
 import { Chip, EmptyState, ErrorState, PressableScale, SkeletonList } from '@/components/ui';
-import { filterExercises, useExercises } from '@/data/useExercises';
+import { filterExercises, useExercises } from '@/hooks/useExercises';
 import { muscleNames } from '@/data/exercises';
 import { useI18n } from '@/i18n';
 import { selection } from '@/lib/haptics';

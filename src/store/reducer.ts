@@ -1,6 +1,6 @@
 import { dayKey } from '@/lib/date';
 import { generatePlan } from '@/lib/plan';
-import type { AuthUser } from '@/lib/auth';
+import type { AuthUser } from '@/services/auth';
 import type { BodyMetric, PersonalRecord, Plan, Profile, Settings, WorkoutSession } from '@/types/models';
 import { applyRecords } from './records';
 
