@@ -70,7 +70,8 @@
     "web": "expo start --web",
     "lint": "expo lint",
     "typecheck": "tsc --noEmit",
-    "test": "jest"
+    "test": "jest",
+    "test:android": "jest --preset jest-expo/android __tests__/boot.test.tsx"
   },
   "private": true,
   "jest": {
