@@ -82,6 +82,12 @@ export async function signInWithApple(): Promise<AuthResult> {
   }
 }
 
+export async function sendPasswordReset(email: string): Promise<boolean> {
+  if (!supabase || !EMAIL_RE.test(email.trim())) return false;
+  const { error } = await supabase.auth.resetPasswordForEmail(email.trim());
+  return !error;
+}
+
 export async function signOut() {
   await supabase?.auth.signOut();
 }
