@@ -1,3 +1,4 @@
+import { isRunningInExpoGo } from 'expo';
 import { Platform } from 'react-native';
 
 type NotificationsModule = typeof import('expo-notifications');
@@ -8,32 +9,18 @@ const supported = Platform.OS === 'ios' || Platform.OS === 'android';
 let cached: NotificationsModule | null | undefined;
 
 /**
- * expo-notifications is loaded lazily: importing it at module scope throws on
- * Android when a native notifications module is missing (e.g. Expo Go), which
- * would crash the whole app at startup. Reminders simply become unavailable.
+ * expo-notifications is loaded lazily, on first use:
+ * - importing it at module scope can throw on Android when a native
+ *   notifications module is missing, which would crash app startup;
+ * - in Expo Go, merely loading it logs push-notification warnings.
+ * Loading also installs the foreground handler. Never throws.
  */
 function notifications(): NotificationsModule | null {
   if (!supported) return null;
   if (cached !== undefined) return cached;
   try {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    cached = require('expo-notifications') as NotificationsModule;
-  } catch (e) {
-    console.warn('[xoog] Notifications are unavailable in this build:', e);
-    cached = null;
-  }
-  return cached;
-}
-
-let configured = false;
-
-/** Installs the foreground handler once. Never throws. */
-export function configureNotifications() {
-  if (configured) return;
-  configured = true;
-  const N = notifications();
-  if (!N) return;
-  try {
+    const N = require('expo-notifications') as NotificationsModule;
     N.setNotificationHandler({
       handleNotification: async () => ({
         shouldShowBanner: true,
@@ -42,9 +29,22 @@ export function configureNotifications() {
         shouldSetBadge: false,
       }),
     });
+    cached = N;
   } catch (e) {
-    console.warn('[xoog] Could not configure notifications:', e);
+    console.warn('[xoog] Notifications are unavailable in this build:', e);
+    cached = null;
   }
+  return cached;
+}
+
+/**
+ * Called at startup. In development/production builds this prepares
+ * notifications right away; in Expo Go it is deferred until the user turns
+ * reminders on, so Expo Go's push-notification warnings don't fire on launch.
+ */
+export function configureNotifications() {
+  if (isRunningInExpoGo()) return;
+  notifications();
 }
 
 export async function ensurePermission(): Promise<boolean> {
