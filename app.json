@@ -1,17 +1,22 @@
 {
   "expo": {
-    "name": "ironpulse-tmp",
-    "slug": "ironpulse-tmp",
+    "name": "XOOG",
+    "slug": "xoog",
+    "scheme": "xoog",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#0E0E14",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.xoog.app",
+      "usesAppleSignIn": true
     },
     "android": {
+      "package": "com.xoog.app",
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#6B4EFF",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -19,7 +24,31 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-localization",
+      "expo-apple-authentication",
+      "expo-secure-store",
+      [
+        "expo-notifications",
+        { "color": "#6B4EFF" }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0E0E14",
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
