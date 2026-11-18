@@ -73,7 +73,8 @@
     "typecheck": "tsc --noEmit",
     "test": "jest",
     "test:android": "jest --preset jest-expo/android __tests__/boot.test.tsx",
-    "start:tunnel": "expo start --tunnel -c"
+    "start:tunnel": "expo start --tunnel -c",
+    "build:apk": "npx eas-cli@latest build -p android --profile preview"
   },
   "private": true,
   "jest": {
