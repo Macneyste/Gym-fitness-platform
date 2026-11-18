@@ -36,7 +36,9 @@
       "expo-secure-store",
       [
         "expo-notifications",
-        { "color": "#6B4EFF" }
+        {
+          "color": "#6B4EFF"
+        }
       ],
       [
         "expo-splash-screen",
@@ -45,7 +47,8 @@
           "image": "./assets/splash-icon.png",
           "imageWidth": 160
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true
