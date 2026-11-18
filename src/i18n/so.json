@@ -1,0 +1,232 @@
+{
+  "common": {
+    "back": "Dib u noqo",
+    "next": "Xiga",
+    "continue": "Sii wad",
+    "close": "Xir",
+    "retry": "Isku day mar kale",
+    "save": "Kaydi",
+    "cancel": "Jooji",
+    "seeAll": "Dhammaan",
+    "min": "daq",
+    "sec": "il.",
+    "kcal": "kcal",
+    "days": "maalmood",
+    "exercises": "jimicsi",
+    "loading": "Waa la soo rarayaa…",
+    "errorTitle": "Wax qalad ah ayaa dhacay",
+    "errorBody": "Fadlan hubi internetkaaga oo isku day mar kale.",
+    "step": "Tallaabo {{current}} / {{total}}"
+  },
+  "brand": {
+    "tagline": "Xoog · Dadaal · Natiijo"
+  },
+  "welcome": {
+    "line1": "Jirkaaga dhis.",
+    "line2": "Naftaada dhis.",
+    "subtitle": "Qorshe tababar oo kuu gaar ah, la socod horumar iyo dhiirigelin maalin kasta.",
+    "cta": "Bilow hadda",
+    "haveAccount": "Akoon ma leedahay?",
+    "login": "Gal"
+  },
+  "onboarding": {
+    "gender": {
+      "title": "Waxaad tahay?",
+      "subtitle": "Tani waxay naga caawinaysaa inaan qorshahaaga habayno.",
+      "male": "Lab",
+      "female": "Dheddig"
+    },
+    "age": {
+      "title": "Da'daadu waa imisa?",
+      "subtitle": "Kor ama hoos u rog si aad u doorato.",
+      "unit": "sano"
+    },
+    "body": {
+      "title": "Miisaankaaga iyo dhererkaaga",
+      "subtitle": "Dhinac u jiid cabbirka.",
+      "weight": "Miisaan",
+      "height": "Dherer"
+    },
+    "goal": {
+      "title": "Maxaad higsanaysaa?",
+      "subtitle": "Dooro hal ama in ka badan.",
+      "lose_weight": "Miisaan dhimis",
+      "lose_weight_sub": "Gub baruurta, fududee jirka",
+      "build_muscle": "Muruq dhisid",
+      "build_muscle_sub": "Kordhi cabbirka muruqa",
+      "gain_strength": "Xoog kordhin",
+      "gain_strength_sub": "Qaad culays ka badan",
+      "general_fitness": "Taam ahaansho guud",
+      "general_fitness_sub": "Caafimaad iyo firfircooni",
+      "endurance": "Adkaysi kordhin",
+      "endurance_sub": "Neef dheer, daal yar"
+    },
+    "level": {
+      "title": "Heerkaaga tababar",
+      "subtitle": "Waxaan kuu habaynaynaa culayska iyo mugga.",
+      "beginner": "Bilow",
+      "beginner_sub": "Hal sano ka yar tababar",
+      "intermediate": "Dhexe",
+      "intermediate_sub": "1–3 sano tababar joogto ah",
+      "advanced": "Horumarsan",
+      "advanced_sub": "3+ sano, tababar adag"
+    },
+    "finish": "Samee qorshahayga"
+  },
+  "auth": {
+    "loginTitle": "Ku soo dhowow mar kale",
+    "loginSubtitle": "Gal si aad u sii wadato dadaalkaaga.",
+    "signupTitle": "Samee akoon",
+    "signupSubtitle": "Hal tallaabo ayaa kaa harsan.",
+    "name": "Magaca",
+    "namePlaceholder": "Magacaaga oo buuxa",
+    "email": "Iimayl",
+    "emailPlaceholder": "magac@tusaale.com",
+    "password": "Furaha sirta",
+    "passwordPlaceholder": "Ugu yaraan 8 xaraf",
+    "showPassword": "Muuji furaha",
+    "hidePassword": "Qari furaha",
+    "remember": "I xasuuso",
+    "forgot": "Ma ilowday?",
+    "loginCta": "Gal",
+    "signupCta": "Samee akoon",
+    "or": "ama ku sii wad",
+    "google": "Google",
+    "apple": "Apple",
+    "noAccount": "Akoon ma lihid?",
+    "signupLink": "Is diiwaan geli",
+    "haveAccount": "Akoon ma leedahay?",
+    "loginLink": "Gal",
+    "invalidEmail": "Geli iimayl sax ah.",
+    "shortPassword": "Furaha sirta waa inuu ahaadaa ugu yaraan 8 xaraf.",
+    "nameRequired": "Geli magacaaga."
+  },
+  "home": {
+    "greeting": "Subax wanaagsan,",
+    "greetingAfternoon": "Galab wanaagsan,",
+    "greetingEvening": "Habeen wanaagsan,",
+    "notifications": "Ogeysiisyo",
+    "today": "MAANTA",
+    "startWorkout": "Bilow tababarka",
+    "calories": "Kalori",
+    "time": "Waqti",
+    "streak": "Streak",
+    "categories": "Qaybaha",
+    "restDay": "Maanta waa maalin nasasho",
+    "restDayBody": "Muruqyadu waxay koraan marka ay nastaan. Soo noqo berri."
+  },
+  "categories": {
+    "strength": "Xoog",
+    "cardio": "Cardio",
+    "hiit": "HIIT",
+    "mobility": "Kala bixin",
+    "yoga": "Yoga"
+  },
+  "days": {
+    "short": ["Sab", "Axd", "Isn", "Tal", "Arb", "Kha", "Jim"]
+  },
+  "levels": {
+    "beginner": "Bilow",
+    "intermediate": "Dhexe",
+    "advanced": "Horumarsan"
+  },
+  "nav": {
+    "home": "Guri",
+    "workouts": "Jimicsi",
+    "progress": "Horumar",
+    "account": "Akoon"
+  },
+  "workout": {
+    "eyebrow": "TODOBAADKA {{week}} · MAALINTA {{day}}",
+    "duration": "Muddo",
+    "exercises": "Jimicsiyo",
+    "level": "Heer",
+    "list": "Liiska jimicsiyada",
+    "setsReps": "{{sets}} × {{reps}}",
+    "start": "Bilow tababarka",
+    "bodyweight": "jirka",
+    "empty": "Tababarkan wali jimicsi kuma jiro."
+  },
+  "live": {
+    "exerciseOf": "Jimicsiga {{current}}/{{total}}",
+    "setOf": "Set {{current}} / {{total}} · {{reps}} ku celin",
+    "rest": "NASASHO",
+    "work": "SAMEE",
+    "add15": "+15 il.",
+    "pause": "Jooji",
+    "resume": "Sii wad",
+    "previous": "Kii hore",
+    "nextSet": "Xiga",
+    "done": "Waa la dhammeeyey",
+    "doneTitle": "Shaqo fiican!",
+    "doneBody": "Tababarka maanta waad dhammaysay. Waa la kaydiyey.",
+    "finish": "Ku noqo guriga",
+    "newPr": "Rikoor cusub!",
+    "quitTitle": "Ka bax tababarka?",
+    "quitBody": "Horumarka set-yada la dhammeeyey waa la kaydinayaa.",
+    "quit": "Ka bax",
+    "elapsed": "Waqtiga la qaatay"
+  },
+  "progress": {
+    "title": "Horumar",
+    "week": "Todobaad",
+    "month": "Bil",
+    "minutes": "Daqiiqadaha tababarka",
+    "vsLast": "marka loo eego hore",
+    "weight": "Miisaanka",
+    "weeklyGoal": "Hadafka todobaadka",
+    "workoutsDone": "{{done}} / {{goal}} tababar",
+    "records": "Rikoorrada shakhsiga",
+    "noRecords": "Wali rikoor ma jiro. Dhammee tababarkaaga ugu horreeya!",
+    "noData": "Xog ma jirto muddadan."
+  },
+  "library": {
+    "title": "Maktabadda jimicsiga",
+    "search": "Raadi jimicsi…",
+    "all": "Dhammaan",
+    "empty": "Jimicsi lama helin.",
+    "emptyBody": "Isku day eray kale ama ka saar shaandhaynta."
+  },
+  "exercise": {
+    "steps": "Tallaabooyinka",
+    "muscles": "Muruqyada la shaqeeyo",
+    "primary": "Koowaad",
+    "secondary": "Labaad",
+    "equipment": "Qalab",
+    "playVideo": "Daar muuqaalka"
+  },
+  "profile": {
+    "title": "Akoon",
+    "editProfile": "Wax ka beddel",
+    "preferences": "Dookhyada",
+    "units": "Cabbirka",
+    "language": "Luqadda",
+    "somali": "Soomaali",
+    "english": "English",
+    "reminders": "Xasuusiyeyaal",
+    "darkMode": "Habka mugdiga",
+    "notifications": "Ogeysiisyada",
+    "logout": "Ka bax",
+    "stats": "{{workouts}} tababar · {{streak}} maalmood streak",
+    "plan": "Qorshahaaga"
+  },
+  "notifications": {
+    "title": "Ogeysiisyo",
+    "reminderTitle": "Waqtiga tababarka!",
+    "reminderBody": "Xoog · Dadaal · Natiijo. Tababarka maanta ayaa ku sugaya.",
+    "dailyReminder": "Xasuusin maalinle ah",
+    "reminderTime": "Waqtiga xasuusinta",
+    "empty": "Ogeysiis cusub ma jiro.",
+    "permissionDenied": "Ogolaanshaha ogeysiisyada waa la diiday. Ka shid goobaha qalabka."
+  },
+  "plan": {
+    "fullBody": "Jirka oo dhan",
+    "upper": "Qaybta sare",
+    "lower": "Qaybta hoose",
+    "push": "Riixid",
+    "pull": "Jiidid",
+    "legs": "Lugaha",
+    "conditioning": "Neefta & HIIT",
+    "mobility": "Kala bixin & Yoga"
+  }
+}

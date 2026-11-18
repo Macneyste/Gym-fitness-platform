@@ -1,0 +1,232 @@
+{
+  "common": {
+    "back": "Back",
+    "next": "Next",
+    "continue": "Continue",
+    "close": "Close",
+    "retry": "Try again",
+    "save": "Save",
+    "cancel": "Cancel",
+    "seeAll": "See all",
+    "min": "min",
+    "sec": "s",
+    "kcal": "kcal",
+    "days": "days",
+    "exercises": "exercises",
+    "loading": "Loading…",
+    "errorTitle": "Something went wrong",
+    "errorBody": "Please check your connection and try again.",
+    "step": "Step {{current}} of {{total}}"
+  },
+  "brand": {
+    "tagline": "Strength · Effort · Results"
+  },
+  "welcome": {
+    "line1": "Build your body.",
+    "line2": "Build yourself.",
+    "subtitle": "A training plan made for you, progress tracking and daily motivation.",
+    "cta": "Get started",
+    "haveAccount": "Already have an account?",
+    "login": "Log in"
+  },
+  "onboarding": {
+    "gender": {
+      "title": "What's your gender?",
+      "subtitle": "This helps us tailor your plan.",
+      "male": "Male",
+      "female": "Female"
+    },
+    "age": {
+      "title": "How old are you?",
+      "subtitle": "Scroll up or down to choose.",
+      "unit": "years"
+    },
+    "body": {
+      "title": "Your weight and height",
+      "subtitle": "Drag the ruler sideways.",
+      "weight": "Weight",
+      "height": "Height"
+    },
+    "goal": {
+      "title": "What's your goal?",
+      "subtitle": "Pick one or more.",
+      "lose_weight": "Lose weight",
+      "lose_weight_sub": "Burn fat, feel lighter",
+      "build_muscle": "Build muscle",
+      "build_muscle_sub": "Increase muscle size",
+      "gain_strength": "Get stronger",
+      "gain_strength_sub": "Lift heavier weights",
+      "general_fitness": "General fitness",
+      "general_fitness_sub": "Health and energy",
+      "endurance": "Build endurance",
+      "endurance_sub": "Longer breath, less fatigue"
+    },
+    "level": {
+      "title": "Your training level",
+      "subtitle": "We'll adjust load and volume for you.",
+      "beginner": "Beginner",
+      "beginner_sub": "Less than a year of training",
+      "intermediate": "Intermediate",
+      "intermediate_sub": "1–3 years of steady training",
+      "advanced": "Advanced",
+      "advanced_sub": "3+ years, hard training"
+    },
+    "finish": "Build my plan"
+  },
+  "auth": {
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "Log in to keep your momentum going.",
+    "signupTitle": "Create account",
+    "signupSubtitle": "You're one step away.",
+    "name": "Name",
+    "namePlaceholder": "Your full name",
+    "email": "Email",
+    "emailPlaceholder": "name@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "At least 8 characters",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "remember": "Remember me",
+    "forgot": "Forgot?",
+    "loginCta": "Log in",
+    "signupCta": "Create account",
+    "or": "or continue with",
+    "google": "Google",
+    "apple": "Apple",
+    "noAccount": "Don't have an account?",
+    "signupLink": "Sign up",
+    "haveAccount": "Already have an account?",
+    "loginLink": "Log in",
+    "invalidEmail": "Enter a valid email.",
+    "shortPassword": "Password must be at least 8 characters.",
+    "nameRequired": "Enter your name."
+  },
+  "home": {
+    "greeting": "Good morning,",
+    "greetingAfternoon": "Good afternoon,",
+    "greetingEvening": "Good evening,",
+    "notifications": "Notifications",
+    "today": "TODAY",
+    "startWorkout": "Start workout",
+    "calories": "Calories",
+    "time": "Time",
+    "streak": "Streak",
+    "categories": "Categories",
+    "restDay": "Today is a rest day",
+    "restDayBody": "Muscles grow while they rest. Come back tomorrow."
+  },
+  "categories": {
+    "strength": "Strength",
+    "cardio": "Cardio",
+    "hiit": "HIIT",
+    "mobility": "Stretching",
+    "yoga": "Yoga"
+  },
+  "days": {
+    "short": ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
+  },
+  "levels": {
+    "beginner": "Beginner",
+    "intermediate": "Intermediate",
+    "advanced": "Advanced"
+  },
+  "nav": {
+    "home": "Home",
+    "workouts": "Workouts",
+    "progress": "Progress",
+    "account": "Account"
+  },
+  "workout": {
+    "eyebrow": "WEEK {{week}} · DAY {{day}}",
+    "duration": "Duration",
+    "exercises": "Exercises",
+    "level": "Level",
+    "list": "Exercise list",
+    "setsReps": "{{sets}} × {{reps}}",
+    "start": "Start workout",
+    "bodyweight": "bodyweight",
+    "empty": "This workout has no exercises yet."
+  },
+  "live": {
+    "exerciseOf": "Exercise {{current}}/{{total}}",
+    "setOf": "Set {{current}} of {{total}} · {{reps}} reps",
+    "rest": "REST",
+    "work": "WORK",
+    "add15": "+15s",
+    "pause": "Pause",
+    "resume": "Resume",
+    "previous": "Previous",
+    "nextSet": "Next",
+    "done": "Done",
+    "doneTitle": "Great work!",
+    "doneBody": "You finished today's workout. It has been saved.",
+    "finish": "Back to home",
+    "newPr": "New record!",
+    "quitTitle": "Quit workout?",
+    "quitBody": "Progress on completed sets will be saved.",
+    "quit": "Quit",
+    "elapsed": "Elapsed time"
+  },
+  "progress": {
+    "title": "Progress",
+    "week": "Week",
+    "month": "Month",
+    "minutes": "Training minutes",
+    "vsLast": "vs previous",
+    "weight": "Weight",
+    "weeklyGoal": "Weekly goal",
+    "workoutsDone": "{{done}} / {{goal}} workouts",
+    "records": "Personal records",
+    "noRecords": "No records yet. Finish your first workout!",
+    "noData": "No data for this period."
+  },
+  "library": {
+    "title": "Exercise library",
+    "search": "Search exercises…",
+    "all": "All",
+    "empty": "No exercises found.",
+    "emptyBody": "Try another word or clear the filters."
+  },
+  "exercise": {
+    "steps": "Steps",
+    "muscles": "Target muscles",
+    "primary": "Primary",
+    "secondary": "Secondary",
+    "equipment": "Equipment",
+    "playVideo": "Play video"
+  },
+  "profile": {
+    "title": "Account",
+    "editProfile": "Edit profile",
+    "preferences": "Preferences",
+    "units": "Units",
+    "language": "Language",
+    "somali": "Soomaali",
+    "english": "English",
+    "reminders": "Reminders",
+    "darkMode": "Dark mode",
+    "notifications": "Notifications",
+    "logout": "Log out",
+    "stats": "{{workouts}} workouts · {{streak}} day streak",
+    "plan": "Your plan"
+  },
+  "notifications": {
+    "title": "Notifications",
+    "reminderTitle": "Time to train!",
+    "reminderBody": "Strength · Effort · Results. Today's workout is waiting.",
+    "dailyReminder": "Daily reminder",
+    "reminderTime": "Reminder time",
+    "empty": "No new notifications.",
+    "permissionDenied": "Notification permission was denied. Enable it in device settings."
+  },
+  "plan": {
+    "fullBody": "Full body",
+    "upper": "Upper body",
+    "lower": "Lower body",
+    "push": "Push",
+    "pull": "Pull",
+    "legs": "Legs",
+    "conditioning": "Conditioning & HIIT",
+    "mobility": "Mobility & Yoga"
+  }
+}
