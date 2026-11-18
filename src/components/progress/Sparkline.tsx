@@ -1,3 +1,4 @@
+import { View } from 'react-native';
 import Svg, { Circle, Polyline } from 'react-native-svg';
 
 import { colors } from '@/theme';
@@ -16,18 +17,20 @@ export function Sparkline({ values, width, height, color = colors.accent }: Prop
   const last = pts[pts.length - 1];
 
   return (
-    <Svg width={width} height={height} accessibilityElementsHidden importantForAccessibility="no">
-      {pts.length > 1 ? (
-        <Polyline
-          points={pts.map(([x, y]) => `${x},${y}`).join(' ')}
-          fill="none"
-          stroke={color}
-          strokeWidth={3}
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      ) : null}
-      <Circle cx={last[0]} cy={last[1]} r={5} fill={color} />
-    </Svg>
+    <View accessibilityElementsHidden importantForAccessibility="no-hide-descendants" style={{ width, height }}>
+      <Svg width={width} height={height}>
+        {pts.length > 1 ? (
+          <Polyline
+            points={pts.map(([x, y]) => `${x},${y}`).join(' ')}
+            fill="none"
+            stroke={color}
+            strokeWidth={3}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        ) : null}
+        <Circle cx={last[0]} cy={last[1]} r={5} fill={color} />
+      </Svg>
+    </View>
   );
 }
