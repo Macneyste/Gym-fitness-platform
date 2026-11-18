@@ -123,7 +123,15 @@
     "yoga": "Yoga"
   },
   "days": {
-    "short": ["Sat", "Sun", "Mon", "Tue", "Wed", "Thu", "Fri"]
+    "short": [
+      "Sat",
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri"
+    ]
   },
   "levels": {
     "beginner": "Beginner",
@@ -165,7 +173,8 @@
     "quitTitle": "Quit workout?",
     "quitBody": "Progress on completed sets will be saved.",
     "quit": "Quit",
-    "elapsed": "Elapsed time"
+    "elapsed": "Elapsed time",
+    "sets": "Sets"
   },
   "progress": {
     "title": "Progress",

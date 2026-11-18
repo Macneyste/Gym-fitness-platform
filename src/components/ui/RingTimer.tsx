@@ -20,10 +20,12 @@ type Props = {
   addLabel?: string;
   onAdd?: () => void;
   size?: number;
+  /** Overrides the clock text (e.g. "×10" for rep-based sets). */
+  valueText?: string;
 };
 
 /** Big circular countdown: violet progress ring, lime dotted inner ring, huge number. */
-export function RingTimer({ remaining, total, caption, addLabel, onAdd, size = 280 }: Props) {
+export function RingTimer({ remaining, total, caption, addLabel, onAdd, size = 280, valueText }: Props) {
   const reduceMotion = useReducedMotion();
   const stroke = 14;
   const r = (size - stroke) / 2;
@@ -44,7 +46,7 @@ export function RingTimer({ remaining, total, caption, addLabel, onAdd, size = 2
   }));
 
   return (
-    <View style={{ width: size, height: size }} accessible accessibilityRole="timer" accessibilityLabel={`${caption ?? ''} ${formatClock(remaining)}`}>
+    <View style={{ width: size, height: size }} accessible accessibilityRole="timer" accessibilityLabel={`${caption ?? ''} ${valueText ?? formatClock(remaining)}`}>
       <Svg width={size} height={size} style={StyleSheet.absoluteFill}>
         <Circle cx={size / 2} cy={size / 2} r={r} stroke={colors.surface2} strokeWidth={stroke} fill="none" />
         <AnimatedCircle
@@ -74,7 +76,7 @@ export function RingTimer({ remaining, total, caption, addLabel, onAdd, size = 2
       <View style={styles.center}>
         {caption ? <Text style={styles.caption}>{caption}</Text> : null}
         <Text style={styles.number} maxFontSizeMultiplier={1} testID="ring-timer-value">
-          {formatClock(remaining)}
+          {valueText ?? formatClock(remaining)}
         </Text>
         {onAdd ? (
           <PressableScale

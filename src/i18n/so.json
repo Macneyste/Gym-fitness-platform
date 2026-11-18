@@ -123,7 +123,15 @@
     "yoga": "Yoga"
   },
   "days": {
-    "short": ["Sab", "Axd", "Isn", "Tal", "Arb", "Kha", "Jim"]
+    "short": [
+      "Sab",
+      "Axd",
+      "Isn",
+      "Tal",
+      "Arb",
+      "Kha",
+      "Jim"
+    ]
   },
   "levels": {
     "beginner": "Bilow",
@@ -165,7 +173,8 @@
     "quitTitle": "Ka bax tababarka?",
     "quitBody": "Horumarka set-yada la dhammeeyey waa la kaydinayaa.",
     "quit": "Ka bax",
-    "elapsed": "Waqtiga la qaatay"
+    "elapsed": "Waqtiga la qaatay",
+    "sets": "Set-yo"
   },
   "progress": {
     "title": "Horumar",
