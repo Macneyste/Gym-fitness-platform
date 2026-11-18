@@ -14,13 +14,16 @@ import { colors } from '@/theme';
 
 SplashScreen.preventAutoHideAsync().catch(() => undefined);
 SystemUI.setBackgroundColorAsync(colors.bg).catch(() => undefined);
-configureNotifications();
 
 function Navigator() {
   const { state } = useStore();
   const [spaceReady] = useSpaceGrotesk({ SpaceGrotesk_500Medium, SpaceGrotesk_700Bold });
   const [interReady] = useInter({ Inter_400Regular, Inter_500Medium, Inter_600SemiBold });
   const ready = spaceReady && interReady && state.hydrated;
+
+  useEffect(() => {
+    configureNotifications();
+  }, []);
 
   useEffect(() => {
     if (ready) SplashScreen.hideAsync().catch(() => undefined);
