@@ -16,7 +16,7 @@ type Props = {
 
 /** 7-day strip, Sab…Jim. Today = lime, completed = violet outline. */
 export function WeekStrip({ today = new Date(), doneDays, selected, onSelect }: Props) {
-  const { tl } = useI18n();
+  const { t, tl } = useI18n();
   const labels = tl('days.short');
   const dates = weekDates(today);
 
@@ -31,8 +31,8 @@ export function WeekStrip({ today = new Date(), doneDays, selected, onSelect }: 
             key={dayKey(d)}
             testID={`week-day-${i}`}
             accessibilityRole="tab"
-            accessibilityLabel={`${labels[i]} ${d.getDate()}`}
-            accessibilityState={{ selected: isSelected || isToday, checked: done }}
+            accessibilityLabel={`${labels[i]} ${d.getDate()}${done ? `, ${t('live.done')}` : ''}`}
+            accessibilityState={{ selected: isSelected || isToday }}
             onPress={() => {
               selection();
               onSelect?.(d);
